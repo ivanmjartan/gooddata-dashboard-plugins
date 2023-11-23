@@ -102,7 +102,7 @@ export const GroupedWidgetHeader: React.VFC<ICustomHeaderProps> = ({
         <>
             <StyledTitleOuter onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
                 <StyledTitle>
-                    <span id={randomId} onClick={() => setBubbleOpen(!bubbleOpen)}>
+                    <span id={randomId} onClick={() => setBubbleOpen(!bubbleOpen)} className="s-plugin-group-title">
                         <GroupIcon style={{ verticalAlign: "middle" }} color={iconsColor} />
                         {widgetTitles[selectedIdentifier]}
                         <ChevronIcon
@@ -130,12 +130,12 @@ export const GroupedWidgetHeader: React.VFC<ICustomHeaderProps> = ({
                     alignPoints={[{ align: "bc tc" }]}
                     className="bubble-light options-menu-bubble plugin-group-bubble"
                 >
-                    <StyledBubbleContent>
+                    <StyledBubbleContent className="s-plugin-group-menu">
                         {groupInsightsIdentifiers.map((item) => {
                             return (
                                 <div
                                     key={item}
-                                    className={`gd-list-item ${
+                                    className={`gd-list-item s-plugin-group-menu-item ${
                                         item === selectedIdentifier ? "is-selected" : ""
                                     }`}
                                     onClick={() => {
